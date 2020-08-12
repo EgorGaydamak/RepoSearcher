@@ -1,11 +1,3 @@
-//
-//  RepoSearcherTests.swift
-//  RepoSearcherTests
-//
-//  Created by Egor Gaydamak on 12.08.2020.
-//  Copyright © 2020 Imaginary Company. All rights reserved.
-//
-
 import XCTest
 @testable import RepoSearcher
 

@@ -17,6 +17,8 @@
 		77E6794224E99AF400D48522 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6794124E99AF400D48522 /* SearchRouter.swift */; };
 		77E6794424E99B0400D48522 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6794324E99B0400D48522 /* SearchConfigurator.swift */; };
 		77E6795524EA9A0C00D48522 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6795424EA9A0C00D48522 /* SearchViewController.xib */; };
+		77E6795824EAFC0600D48522 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6795724EAFC0600D48522 /* RequestSender.swift */; };
+		77E6795A24EB041300D48522 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6795924EB041300D48522 /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		77E6794124E99AF400D48522 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		77E6794324E99B0400D48522 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
 		77E6795424EA9A0C00D48522 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		77E6795724EAFC0600D48522 /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
+		77E6795924EB041300D48522 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			children = (
 				77E6791724E424C700D48522 /* AppDelegate.swift */,
 				77E6793924E9916800D48522 /* Scenes */,
+				77E6795624EAFBCC00D48522 /* Network */,
 				77E6792024E424C900D48522 /* Assets.xcassets */,
 				77E6792224E424C900D48522 /* LaunchScreen.storyboard */,
 				77E6792524E424C900D48522 /* Info.plist */,
@@ -122,6 +127,26 @@
 				77E6794324E99B0400D48522 /* SearchConfigurator.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		77E6795624EAFBCC00D48522 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				77E6795B24EB049100D48522 /* DomainModels */,
+				77E6795924EB041300D48522 /* NetworkClient.swift */,
+				77E6795724EAFC0600D48522 /* RequestSender.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		77E6795B24EB049100D48522 /* DomainModels */ = {
+			isa = PBXGroup;
+			children = (
+				77E6795C24EB04DE00D48522 /* RepositoriesSearchResponse.swift */,
+				77E6795E24EB051300D48522 /* Repository.swift */,
+				77E6796024EB054500D48522 /* RepositoryOwner.swift */,
+			);
+			path = DomainModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,12 +250,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E6796124EB054500D48522 /* RepositoryOwner.swift in Sources */,
 				77E6794424E99B0400D48522 /* SearchConfigurator.swift in Sources */,
 				77E6793E24E99AD900D48522 /* SearchInteractor.swift in Sources */,
+				77E6795D24EB04DE00D48522 /* RepositoriesSearchResponse.swift in Sources */,
+				77E6795824EAFC0600D48522 /* RequestSender.swift in Sources */,
 				77E6794224E99AF400D48522 /* SearchRouter.swift in Sources */,
 				77E6793C24E99AA300D48522 /* SearchViewController.swift in Sources */,
 				77E6794024E99AE600D48522 /* SearchPresenter.swift in Sources */,
 				77E6791824E424C700D48522 /* AppDelegate.swift in Sources */,
+				77E6795A24EB041300D48522 /* NetworkClient.swift in Sources */,
+				77E6795F24EB051300D48522 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

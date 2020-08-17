@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="RepoSearcher" customModuleProvider="target">
+            <connections>
+                <outlet property="queryTextField" destination="eIQ-V1-S7t" id="RWb-Uq-AMu"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7pU-NP-avW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for repositories on GitHub:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1s0-Qk-2La">
+                    <rect key="frame" x="63.5" y="143" width="287.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your query here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIQ-V1-S7t">
+                    <rect key="frame" x="48" y="204.5" width="318" height="34"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="search"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="BlB-TT-bCs"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="eIQ-V1-S7t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0oU-XY-1qM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eIQ-V1-S7t" secondAttribute="trailing" constant="48" id="6ON-lY-evd"/>
+                <constraint firstItem="eIQ-V1-S7t" firstAttribute="top" secondItem="1s0-Qk-2La" secondAttribute="bottom" constant="40" id="Io6-m6-Okl"/>
+                <constraint firstItem="1s0-Qk-2La" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J2d-ee-LN0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1s0-Qk-2La" secondAttribute="trailing" constant="30" id="hA3-rc-JBU"/>
+                <constraint firstItem="1s0-Qk-2La" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="55" id="hZz-Wd-B0p"/>
+                <constraint firstItem="1s0-Qk-2La" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="paf-Fx-Jc0"/>
+                <constraint firstItem="eIQ-V1-S7t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="48" id="zrZ-OK-Kqx"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

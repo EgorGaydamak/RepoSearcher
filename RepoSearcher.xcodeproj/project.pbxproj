@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		774F278624F6D85F001A556C /* Repositories.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774F278524F6D85F001A556C /* Repositories.xcassets */; };
+		774F278824F7C015001A556C /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F278724F7C015001A556C /* RepositoryViewModel.swift */; };
 		77E6791824E424C700D48522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6791724E424C700D48522 /* AppDelegate.swift */; };
 		77E6792124E424C900D48522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E6792024E424C900D48522 /* Assets.xcassets */; };
 		77E6792424E424C900D48522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E6792224E424C900D48522 /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		774F278524F6D85F001A556C /* Repositories.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Repositories.xcassets; sourceTree = "<group>"; };
+		774F278724F7C015001A556C /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		77E6791424E424C700D48522 /* RepoSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E6791724E424C700D48522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E6792024E424C900D48522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				77E6797224EB30E000D48522 /* RepositoryTableViewCell.xib */,
 				77E6797024EB30B700D48522 /* RepositoryTableViewCell.swift */,
+				774F278724F7C015001A556C /* RepositoryViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				77E6794024E99AE600D48522 /* SearchPresenter.swift in Sources */,
 				77E6796A24EB1A3600D48522 /* RepositoriesRouter.swift in Sources */,
 				77E6791824E424C700D48522 /* AppDelegate.swift in Sources */,
+				774F278824F7C015001A556C /* RepositoryViewModel.swift in Sources */,
 				77E6797124EB30B700D48522 /* RepositoryTableViewCell.swift in Sources */,
 				77E6795A24EB041300D48522 /* NetworkClient.swift in Sources */,
 				77E6795F24EB051300D48522 /* Repository.swift in Sources */,

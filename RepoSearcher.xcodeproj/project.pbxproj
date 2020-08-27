@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		774F278624F6D85F001A556C /* Repositories.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774F278524F6D85F001A556C /* Repositories.xcassets */; };
 		77E6791824E424C700D48522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6791724E424C700D48522 /* AppDelegate.swift */; };
 		77E6792124E424C900D48522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E6792024E424C900D48522 /* Assets.xcassets */; };
 		77E6792424E424C900D48522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E6792224E424C900D48522 /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		774F278524F6D85F001A556C /* Repositories.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Repositories.xcassets; sourceTree = "<group>"; };
 		77E6791424E424C700D48522 /* RepoSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E6791724E424C700D48522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E6792024E424C900D48522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				77E6796724EB1A2100D48522 /* RepositoriesPresenter.swift */,
 				77E6796924EB1A3600D48522 /* RepositoriesRouter.swift */,
 				77E6796B24EB1A4C00D48522 /* RepositoriesConfigurator.swift */,
+				774F278524F6D85F001A556C /* Repositories.xcassets */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				77E6792124E424C900D48522 /* Assets.xcassets in Resources */,
 				77E6796E24EB2CCD00D48522 /* RepositoriesViewController.xib in Resources */,
 				77E6795524EA9A0C00D48522 /* SearchViewController.xib in Resources */,
+				774F278624F6D85F001A556C /* Repositories.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

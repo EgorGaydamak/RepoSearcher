@@ -17,6 +17,12 @@ protocol NetworkClientInterface {
                             itemsPerPage: Int?,
                             page: Int?,
                             completion: @escaping (Result<RepositoriesSearchResponse, Error>) -> Void)
+
+    func fetchForks(repositoryName: String,
+                    repositoryOwnerLogin: String,
+                    itemsPerPage: Int?,
+                    page: Int?,
+                    completion: @escaping (Result<[Fork], Error>) -> Void)
 }
 
 final class NetworkClient: NetworkClientInterface {
@@ -49,6 +55,19 @@ final class NetworkClient: NetworkClientInterface {
                           itemsPerPage: itemsPerPage,
                           page: page,
                           completion: completion)
+    }
+
+    func fetchForks(repositoryName: String,
+                    repositoryOwnerLogin: String,
+                    itemsPerPage: Int?,
+                    page: Int?,
+                    completion: @escaping (Result<[Fork], Error>) -> Void) {
+
+        sendPagingRequest(url: "https://api.github.com/repos/\(repositoryOwnerLogin)/\(repositoryName)/forks",
+            parameters: nil,
+            itemsPerPage: itemsPerPage,
+            page: page,
+            completion: completion)
     }
 
     private func sendPagingRequest<T: Decodable>(url: String,

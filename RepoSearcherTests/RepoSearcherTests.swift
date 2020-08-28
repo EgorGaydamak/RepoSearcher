@@ -26,6 +26,8 @@ class RepoSearcherTests: XCTestCase {
 
         XCTAssertEqual(PagingPresenterHelper.calculateIndexPathsToReload(allItemsCount: 7, newItemsCount: 2, section: 0),
                        [IndexPath(row: 5, section: 0), IndexPath(row: 6, section: 0)], "calculateIndexPathsToReload works incorrectly")
+        XCTAssertEqual(PagingPresenterHelper.calculateIndexPathsToReload(allItemsCount: 6, newItemsCount: 0, section: 0),
+                       [], "calculateIndexPathsToReload works incorrectly")
     }
 
     func testPerformanceExample() throws {

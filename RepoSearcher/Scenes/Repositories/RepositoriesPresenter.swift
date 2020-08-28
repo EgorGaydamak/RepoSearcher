@@ -4,6 +4,9 @@ protocol RepositoriesPresenterInterface {
     init(viewController: RepositoriesViewControllerInterface)
 
     func present(repositories: [Repository], pageNumber: Int, totalCount: Int)
+    func display(title: String)
+
+    func showRepository(at index: Int)
 }
 
 final class RepositoriesPresenter: RepositoriesPresenterInterface {
@@ -35,6 +38,22 @@ final class RepositoriesPresenter: RepositoriesPresenterInterface {
             self.viewController?.showRepositories(viewModels: viewModels,
                                                   totalCount: totalCount,
                                                   newIndexPathsToReload: indexPathsToReload)
+        }
+    }
+
+    func display(title: String) {
+        DispatchQueue.main.async {
+            self.viewController?.setTitle(title: title)
+        }
+    }
+
+    func showRepository(at index: Int) {
+        let repository = repositories[index]
+
+        if repository.forks > 0 {
+            viewController?.goToRepositoryInfo(repositoryName: repository.name,
+                                               repositoryOwnerLogin: repository.owner.login,
+                                               numberOfForks: repository.forks)
         }
     }
 }

@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 protocol RepositoriesViewControllerInterface: class {
     var interactor: RepositoriesInteractorInterface? { get set }
     var router: RepositoriesRouterInterface? { get set }
@@ -9,6 +7,12 @@ protocol RepositoriesViewControllerInterface: class {
     func showRepositories(viewModels: [RepositoryViewModel],
                           totalCount: Int,
                           newIndexPathsToReload: [IndexPath]?)
+
+    func setTitle(title: String)
+
+    func goToRepositoryInfo(repositoryName: String,
+                            repositoryOwnerLogin: String,
+                            numberOfForks: Int)
 }
 
 final class RepositoriesViewController: UIViewController, RepositoriesViewControllerInterface {
@@ -48,8 +52,21 @@ final class RepositoriesViewController: UIViewController, RepositoriesViewContro
             return
         }
 
-        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload, tableView: tableView)
         tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+    }
+
+    func setTitle(title: String) {
+        self.title = title
+    }
+
+    func goToRepositoryInfo(repositoryName: String,
+                            repositoryOwnerLogin: String,
+                            numberOfForks: Int) {
+
+        router?.goToRepositoryInfo(repositoryName: repositoryName,
+                                   repositoryOwnerLogin: repositoryOwnerLogin,
+                                   numberOfForks: numberOfForks)
     }
 }
 
@@ -63,7 +80,7 @@ extension RepositoriesViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        interactor?.repositorySelected(index: indexPath.row)
     }
 }
 
@@ -74,7 +91,7 @@ extension RepositoriesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repositoryCell", for: indexPath) as! RepositoryTableViewCell
-        if isLoadingCell(for: indexPath) {
+        if isLoadingCell(for: indexPath, viewModelsCount: repositoryViewModels.count) {
             cell.configure(repository: .none)
         } else {
             cell.configure(repository: repositoryViewModels[indexPath.row])
@@ -86,21 +103,8 @@ extension RepositoriesViewController: UITableViewDataSource {
 
 extension RepositoriesViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        if indexPaths.contains(where: isLoadingCell) {
+        if indexPaths.contains(where: { isLoadingCell(for: $0, viewModelsCount: repositoryViewModels.count) }) {
             interactor?.fetchRepositories()
         }
     }
-}
-
-private extension RepositoriesViewController {
-  func isLoadingCell(for indexPath: IndexPath) -> Bool {
-    return indexPath.row >= repositoryViewModels.count
-  }
-
-  func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-    let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
-    let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-
-    return Array(indexPathsIntersection)
-  }
 }

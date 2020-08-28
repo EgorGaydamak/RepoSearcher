@@ -1,10 +1,8 @@
 import UIKit
 
-protocol RouterInterface {
+protocol SearchRouterInterface {
     init(navigationController: UINavigationController?)
-}
 
-protocol SearchRouterInterface: RouterInterface {
     func goToRepositories(queryString: String, networkClient: NetworkClientInterface)
 }
 
@@ -17,10 +15,11 @@ final class SearchRouter: SearchRouterInterface {
 
     func goToRepositories(queryString: String, networkClient: NetworkClientInterface) {
         let viewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
+
+        navigationController?.pushViewController(viewController, animated: true)
+
         RepositoriesConfigurator.configureScene(around: viewController,
                                                 queryString: queryString,
                                                 networkClient: networkClient)
-
-        navigationController?.pushViewController(viewController, animated: true)
     }
 }

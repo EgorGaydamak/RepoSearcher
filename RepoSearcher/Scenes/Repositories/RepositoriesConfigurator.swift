@@ -21,7 +21,8 @@ final class RepositoriesConfigurator {
                                        interactorMode: RepositoriesInteractorMode,
                                        networkClient: NetworkClientInterface) {
 
-        let router = RepositoriesRouter(navigationController: viewController.navigationController) // what to do with navigation controller
+        let router = RepositoriesRouter(navigationController: viewController.navigationController,
+                                        networkClient: networkClient) // what to do with navigation controller
         let presenter = RepositoriesPresenter(viewController: viewController)
         let interactor = RepositoriesInteractor(mode: interactorMode,
                                                 presenter: presenter,

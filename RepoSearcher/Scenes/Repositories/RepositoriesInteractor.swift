@@ -9,6 +9,7 @@ protocol RepositoriesInteractorInterface {
          networkClient: NetworkClientInterface)
 
     func fetchRepositories()
+    func repositorySelected(index: Int)
 }
 
 final class RepositoriesInteractor: RepositoriesInteractorInterface {
@@ -28,6 +29,13 @@ final class RepositoriesInteractor: RepositoriesInteractorInterface {
         self.mode = mode
         self.presenter = presenter
         self.networkClient = networkClient
+
+        switch mode {
+        case .search(let query):
+            presenter.display(title: "🕵🏻‍♂️ \(query)")
+        case .userRepositories(let login):
+            presenter.display(title: login)
+        }
     }
 
     func fetchRepositories() {
@@ -87,5 +95,9 @@ final class RepositoriesInteractor: RepositoriesInteractorInterface {
                 }
             }
         }
+    }
+
+    func repositorySelected(index: Int) {
+        presenter.showRepository(at: index)
     }
 }

@@ -1,6 +1,8 @@
 import XCTest
 @testable import RepoSearcher
 
+//TODO: provide more unit tests
+
 class RepoSearcherTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -12,8 +14,18 @@ class RepoSearcherTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let viewController = UIViewController()
+
+        XCTAssertEqual(viewController.isLoadingCell(for: IndexPath(row: 0, section: 0),
+                                                    viewModelsCount: 10), false, "isLoadingCell works incorrectly")
+        XCTAssertEqual(viewController.isLoadingCell(for: IndexPath(row: 10, section: 0),
+                                                    viewModelsCount: 10), true, "isLoadingCell works incorrectly")
+        XCTAssertEqual(viewController.isLoadingCell(for: IndexPath(row: 10, section: 0),
+                                                    viewModelsCount: 5), true, "isLoadingCell works incorrectly")
+
+
+        XCTAssertEqual(PagingPresenterHelper.calculateIndexPathsToReload(allItemsCount: 7, newItemsCount: 2, section: 0),
+                       [IndexPath(row: 5, section: 0), IndexPath(row: 6, section: 0)], "calculateIndexPathsToReload works incorrectly")
     }
 
     func testPerformanceExample() throws {

@@ -3,5 +3,5 @@ struct Repository: Decodable {
     let description: String?
     let forks: Int
     let watchers: Int
-    let owner: RepositoryOwner
+    let owner: User
 }

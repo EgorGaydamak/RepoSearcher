@@ -20,7 +20,7 @@ final class RepositoryInfoInteractor: RepositoryInfoInteractorInterface {
 
     private let itemsPerPage = 30
     private var isFetchInProgress = false
-    private var currentPage = 0
+    private var currentPage = 1
     private var totalItemsCount: Int
 
     init(repositoryName: String,

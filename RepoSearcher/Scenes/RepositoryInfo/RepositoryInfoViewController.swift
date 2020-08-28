@@ -80,6 +80,18 @@ extension RepositoryInfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96
     }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ImageDownloadingInterface else { return }
+
+        cell.startImageDownloading()
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ImageDownloadingInterface else { return }
+
+        cell.cancelImageDownloading()
+    }
 }
 
 extension RepositoryInfoViewController: UITableViewDataSource {

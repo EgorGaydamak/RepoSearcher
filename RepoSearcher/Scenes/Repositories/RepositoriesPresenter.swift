@@ -32,7 +32,8 @@ final class RepositoriesPresenter: RepositoriesPresenterInterface {
         let viewModels = repositories.map { RepositoryViewModel(name: $0.name,
                                                                 description: $0.description ?? "",
                                                                 numberOfForks: String($0.forks),
-                                                                numberOfWatchers: String($0.watchers)) }
+                                                                numberOfWatchers: String($0.watchers),
+                                                                ownerAvatarUrl: $0.owner.avatarUrl) }
 
         DispatchQueue.main.async {
             self.viewController?.showRepositories(viewModels: viewModels,

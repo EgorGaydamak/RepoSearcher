@@ -3,4 +3,5 @@ struct RepositoryViewModel {
     var description: String
     var numberOfForks: String
     var numberOfWatchers: String
+    var ownerAvatarUrl: String
 }

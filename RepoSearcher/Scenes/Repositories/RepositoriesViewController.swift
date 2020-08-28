@@ -73,6 +73,16 @@ final class RepositoriesViewController: UIViewController, RepositoriesViewContro
 extension RepositoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cellHeights[indexPath] = cell.frame.size.height
+
+        guard let cell = cell as? ImageDownloadingInterface else { return }
+
+        cell.startImageDownloading()
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ImageDownloadingInterface else { return }
+
+        cell.cancelImageDownloading()
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

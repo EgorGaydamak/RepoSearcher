@@ -5,5 +5,4 @@ Things to improve:
 - [ ] Number of requests is limited now (Use github auth token to work with API)
 - [ ] Try to make a base classes for loading data with paging
 - [ ] Implement errors showing
-- [ ] Check images downloading on cells reusing
 - [ ] Provide more unit tests
